@@ -1,220 +1,292 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sala Morris – Copia le mie operazioni su XAU/USD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sala Morris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="ticker-bar">
-    <div class="ticker-content">
-      <span class="ticker-label">XAU/USD LIVE</span>
-      <span class="ticker-price" id="tickerPrice">2318.40</span>
-      <span class="ticker-change positive" id="tickerChange">▲ +12.30 (+0.53%)</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">SPREAD: <strong>0.3</strong></span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">OPERAZIONI OGGI: <strong>3</strong></span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">WIN RATE 30gg: <strong>78%</strong></span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">XAU/USD LIVE</span>
-      <span class="ticker-price">2318.40</span>
-      <span class="ticker-change positive">▲ +12.30 (+0.53%)</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">WIN RATE 30gg: <strong>78%</strong></span>
-    </div>
-  </div>
+<!-- ===================== BLOCCO 1: HERO ===================== -->
+<section class="hero">
+  <div class="hero__glow"></div>
 
-  <div class="social-bar">
-    <span class="live-dot"></span>
-    <span id="viewerCount">23</span> persone stanno guardando questo sito adesso
-    <span class="urgency-pill">⚡ Posti limitati</span>
-  </div>
+  <div class="hero__container">
 
-  <header class="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="logo-wrap">
-      <div class="logo-ring">
-        <img src="image.jpg" alt="Morris" class="logo-img" onerror="this.style.display='none';this.parentElement.classList.add('no-img')" />
-        <div class="logo-fallback">M</div>
-      </div>
-      <div class="logo-badge">✔ Trader Verificato</div>
+    <h1 class="hero__title">
+      Non hai bisogno di lavorare più ore.<br>
+      Hai bisogno di un <span class="hl">sistema migliore</span>.
+    </h1>
+
+    <p class="hero__body">
+      Una community privata dove ogni giorno condivido le operazioni che eseguo
+      sul mio conto reale, ti insegno il metodo e ti accompagno passo dopo passo.
+    </p>
+
+    <div class="hero__vsl">
+      <div id="vidalytics_embed_xAyGOYFG7h1gPb8x" style="width: 100%; position:relative; padding-top: 177.94%;"></div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_xAyGOYFG7h1gPb8x', 'https://fast.vidalytics.com/embeds/LbjsXeBc/xAyGOYFG7h1gPb8x/');
+      </script>
     </div>
-    <p class="hero-eyebrow">XAU/USD · Oro · Segnali Professionali</p>
-    <h1 class="hero-title">Copia le mie operazioni<br /><span class="gold-text">sull'oro in tempo reale.</span></h1>
-    <p class="hero-sub">Entra nella <strong>Sala Morris</strong> — ogni giorno ricevi operazioni guidate su XAU/USD, pronte da replicare sul tuo conto. Zero analisi. Zero stress.</p>
-    <div class="scarcity-block">
-      <p class="scarcity-label">🔒 Accesso disponibile per ancora</p>
-      <div class="timer-wrap">
-        <div class="timer-unit"><span id="timerH">00</span><small>ore</small></div>
-        <div class="timer-sep">:</div>
-        <div class="timer-unit"><span id="timerM">07</span><small>min</small></div>
-        <div class="timer-sep">:</div>
-        <div class="timer-unit"><span id="timerS">23</span><small>sec</small></div>
-      </div>
-    </div>
-    <a href="https://wa.me/393514263710?text=Ciao,%20ho%20visto%20la%20Sala%20Morris.%20Come%20funziona%3F" class="cta-btn" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon" />
-      Entra adesso in Sala Morris
+
+    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="hero__cta">
+      Accedi alla Sala Morris
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </a>
-    <p class="cta-sub">Accesso gratuito · Operatività guidata · Posti limitati</p>
-  </header>
 
-  <section class="benefits">
-    <div class="benefits-inner">
-      <div class="benefit-card">
-        <div class="benefit-icon">👥</div>
-        <h3>Oltre 500 Membri Attivi</h3>
-        <p>Fai parte di una community reale di trader che ogni giorno copiano le stesse operazioni su XAU/USD. Non sei solo.</p>
-      </div>
-      <div class="benefit-card highlight">
-        <div class="highlight-badge">Il più importante</div>
-        <div class="benefit-icon">📊</div>
-        <h3>Operatività Guidata 100%</h3>
-        <p>Ricevi entry, stop loss e take profit già pronti. Zero analisi da fare. Segui il segnale, replica l'operazione, registra il profitto.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">⏳</div>
-        <h3>Posti Limitati — Richiedi Ora</h3>
-        <p>Per mantenere la qualità dei segnali i posti sono strettamente limitati. Ogni giorno riceviamo nuove richieste.</p>
-      </div>
+    <div class="hero__badges">
+      <span class="hero__badge">✓ 500+ membri</span>
+      <span class="hero__badge">✓ Operatività quotidiana</span>
+      <span class="hero__badge">✓ Supporto costante</span>
     </div>
-  </section>
 
-  <section class="stats">
-    <div class="stats-inner">
-      <div class="stat-item"><span class="stat-num">500<span class="gold-text">+</span></span><span class="stat-label">Membri nella sala</span></div>
-      <div class="stat-item"><span class="stat-num">9<span class="gold-text">+</span></span><span class="stat-label">Anni su XAU/USD</span></div>
-      <div class="stat-item"><span class="stat-num">78<span class="gold-text">%</span></span><span class="stat-label">Win rate mensile</span></div>
-      <div class="stat-item"><span class="stat-num">0<span class="gold-text">€</span></span><span class="stat-label">Costo di accesso</span></div>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 1 =================== -->
+
+<!-- ===================== BLOCCO 2: PAIN ===================== -->
+<section class="pain">
+  <div class="pain__container">
+
+    <h2 class="pain__title">Ti riconosci in questa situazione?</h2>
+
+    <div class="pain__cycle">
+      <p class="pain__line">Ogni mese lo stipendio entra.</p>
+      <p class="pain__line pain__line--fade">E quasi subito esce.</p>
     </div>
-  </section>
 
-  <section class="how">
-    <div class="how-inner">
-      <h2 class="section-title">Come funziona</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h4>Richiedi l'accesso</h4>
-          <p>Clicca sul pulsante WhatsApp e invia la richiesta. Rispondo personalmente.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h4>Vieni aggiunto alla Sala</h4>
-          <p>Ti inserisco nel gruppo. Da quel momento ricevi ogni segnale prima dell'apertura del mercato.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h4>Copia e profitto</h4>
-          <p>Replica l'operazione sul tuo broker. Entry, SL e TP già pronti. Semplice.</p>
-        </div>
+    <ul class="pain__list">
+      <li>Bollette.</li>
+      <li>Affitto.</li>
+      <li>Spese impreviste.</li>
+    </ul>
+
+    <p class="pain__body">
+      E alla fine rimane sempre troppo poco per concederti quello che vorresti.
+    </p>
+
+    <ul class="pain__list pain__list--wants">
+      <li>Una cena fuori.</li>
+      <li>Un weekend.</li>
+      <li>Un po' di tranquillità.</li>
+    </ul>
+
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 2 =================== -->
+
+<!-- ===================== BLOCCO 3: BELIEF SHIFT ===================== -->
+<section class="belief">
+  <div class="belief__container">
+    <p class="belief__body">
+      La maggior parte delle persone pensa che per migliorare
+      la propria situazione economica serva lavorare ancora di più.
+    </p>
+    <p class="belief__negation">Ma non è così.</p>
+    <h2 class="belief__title">Serve un <span class="hl">sistema</span>.</h2>
+    <p class="belief__body belief__body--muted">
+      Un sistema semplice da seguire con costanza.
+    </p>
+
+    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="belief__cta">
+      Accedi alla Sala Morris
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 3 =================== -->
+
+<!-- ===================== BLOCCO 4: STORY ===================== -->
+<section class="story">
+  <div class="story__container">
+
+    <img class="story__photo" src="images/foto.gif" alt="Morris Iazzetta - Sala Morris">
+
+    <div class="story__content">
+      <p class="story__body story__body--strong">
+        Da 10 ore al giorno per <span class="hl">2.000€ al mese</span>
+        a oltre <span class="hl">50.000€ di capitale reale</span>.
+      </p>
+      <p class="story__body">
+        Ogni giorno condivido le mie operazioni con oltre <strong>500 persone</strong>:
+        non scorciatoie, ma un metodo che puoi seguire da subito.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 4 =================== -->
+
+<!-- ===================== BLOCCO 5: FEATURES ===================== -->
+<section class="features">
+  <div class="features__container">
+
+    <h2 class="features__title">Cosa ottieni entrando nella Sala Morris</h2>
+
+    <div class="features__grid">
+
+      <div class="feature">
+        <span class="feature__number">01</span>
+        <h3 class="feature__title">Operi con sicurezza, ogni giorno</h3>
+        <p class="feature__body">
+          Ricevi la notifica, copi l'operazione, segui la gestione in tempo reale.
+          Anche se parti da zero, sai sempre cosa fare.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <section class="final-cta">
-    <div class="final-cta-inner">
-      <p class="final-eyebrow">🔥 Posti quasi esauriti</p>
-      <h2>Smetti di guardare il mercato.<br /><span class="gold-text">Inizia a seguire chi lo legge ogni giorno.</span></h2>
-      <p class="final-sub">Unisciti a oltre 500 trader che ogni giorno ricevono operazioni su XAU/USD pronte da replicare.</p>
-      <div class="scarcity-block compact">
-        <p class="scarcity-label">⏱ Accesso disponibile ancora per</p>
-        <div class="timer-wrap">
-          <div class="timer-unit"><span id="timerH2">00</span><small>ore</small></div>
-          <div class="timer-sep">:</div>
-          <div class="timer-unit"><span id="timerM2">07</span><small>min</small></div>
-          <div class="timer-sep">:</div>
-          <div class="timer-unit"><span id="timerS2">00</span><small>sec</small></div>
-        </div>
+      <div class="feature">
+        <span class="feature__number">02</span>
+        <h3 class="feature__title">Impari a muoverti da solo</h3>
+        <p class="feature__body">
+          Con i videocorsi capisci il perché di ogni operazione, così nel tempo
+          diventi autonomo invece di dipendere da qualcuno.
+        </p>
       </div>
-      <a href="https://wa.me/393514263710?text=Ciao,%20ho%20visto%20la%20Sala%20Morris.%20Come%20funziona%3F" class="cta-btn large" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon" />
-        Richiedi l'accesso ora su WhatsApp
-      </a>
-      <p class="viewer-note">🟢 <span id="viewerCount2">23</span> persone stanno guardando adesso</p>
-    </div>
-  </section>
 
-  <section class="story">
-    <div class="story-inner">
-      <p class="story-eyebrow">Ancora non sei convinto? Leggi la mia storia.</p>
-      <h2 class="story-title">Da operaio 12 ore al giorno<br /><span class="gold-text">a vivere di trading.</span></h2>
-      <div class="story-text">
-        <p>Ho lasciato la scuola. Ho fatto il cameriere, l'operaio. Per un anno intero ho lavorato <strong>12 ore al giorno in trasferta</strong>, lontano da casa, per 1.500€ al mese.</p>
-        <p>Nel frattempo studiavo i grafici la notte. Perdevo soldi. Ricominciavo. <strong>Per 9 anni ho sbattuto la testa</strong> contro lo stesso muro.</p>
-        <p>Poi ho capito una cosa sola: non mi mancava il talento. Mi mancava un <strong>metodo chiaro, step by step</strong>, e la testa giusta per seguirlo.</p>
-        <p>Da quel momento è cambiato tutto. Non parlo solo di soldi — parlo di <strong>non guardare più le bollette.</strong> Di svegliarti la mattina senza ansia. Di essere spensierato. Viaggiare. Avere una routine che scegli tu.</p>
-        <p>Il trading non serve per forza per guadagnare tantissimo. Serve per guadagnare <strong>il giusto — e vivere spensierati.</strong></p>
-        <p class="story-close"><span class="gold-text">Quello che ho costruito in anni di errori, oggi lo metto a disposizione dentro la Sala. Passo dopo passo. Come avrei voluto che qualcuno lo spiegasse a me.</span></p>
+      <div class="feature">
+        <span class="feature__number">03</span>
+        <h3 class="feature__title">Non resti mai bloccato da solo</h3>
+        <p class="feature__body">
+          Hai supporto quotidiano, mio e della community. Ogni dubbio trova
+          una risposta, subito.
+        </p>
       </div>
-      <a href="https://wa.me/393514263710?text=Ciao,%20ho%20visto%20la%20Sala%20Morris.%20Come%20funziona%3F" class="cta-btn" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon" />
-        Entra adesso in Sala Morris
-      </a>
+
+      <div class="feature">
+        <span class="feature__number">04</span>
+        <h3 class="feature__title">Parti senza perdere tempo</h3>
+        <p class="feature__body">
+          Strumenti e piattaforme già selezionati: eviti settimane di ricerche
+          e inizi subito a operare.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 5 =================== -->
 
-  <footer class="footer">
-    <p>© 2025 Sala Morris · Trading su XAU/USD · I risultati passati non garantiscono risultati futuri.</p>
-  </footer>
+<!-- ===================== BLOCCO 6: COME FUNZIONA ===================== -->
+<section class="howitworks">
+  <div class="howitworks__container">
 
-  <script>
-    (function(){
-      var D=7*60+23;
-      var end=sessionStorage.getItem('morrisEnd');
-      if(!end||Date.now()>+end){end=Date.now()+D*1000;sessionStorage.setItem('morrisEnd',end);}
-      function fmt(n){return String(Math.floor(n)).padStart(2,'0');}
-      function set(t){
-        var h=Math.floor(t/3600),m=Math.floor((t%3600)/60),s=t%60;
-        [['timerH','timerM','timerS'],['timerH2','timerM2','timerS2']].forEach(function(ids){
-          var a=document.getElementById(ids[0]),b=document.getElementById(ids[1]),c=document.getElementById(ids[2]);
-          if(a)a.textContent=fmt(h);if(b)b.textContent=fmt(m);if(c)c.textContent=fmt(s);
-        });
-      }
-      function tick(){
-        var r=Math.max(0,Math.floor((+end-Date.now())/1000));
-        set(r);
-        if(r<=0){end=Date.now()+D*1000;sessionStorage.setItem('morrisEnd',end);}
-      }
-      tick();setInterval(tick,1000);
-    })();
+    <h2 class="howitworks__title">Come funziona</h2>
 
-    (function(){
-      function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-      var cur=rnd(18,26);
-      function update(){
-        cur=Math.min(31,Math.max(15,cur+rnd(-3,3)));
-        ['viewerCount','viewerCount2'].forEach(function(id){
-          var el=document.getElementById(id);if(el)el.textContent=cur;
-        });
-        setTimeout(update,rnd(8000,22000));
-      }
-      update();
-    })();
+    <div class="howitworks__grid">
 
-    (function(){
-      var price=2318.40;
-      function tick(){
-        price=Math.max(2290,Math.min(2360,price+(Math.random()-.48)*.8));
-        var diff=price-2318.40,pct=((diff/2318.40)*100).toFixed(2);
-        var sign=diff>=0?'▲':'▼',cls=diff>=0?'positive':'negative',col=diff>=0?'#22C55E':'#EF4444';
-        var pe=document.getElementById('tickerPrice'),ce=document.getElementById('tickerChange');
-        if(pe)pe.textContent=price.toFixed(2);
-        if(ce){ce.textContent=sign+' '+Math.abs(diff).toFixed(2)+' ('+Math.abs(pct)+'%)';ce.className='ticker-change '+cls;ce.style.color=col;}
-        setTimeout(tick,3000+Math.random()*4000);
-      }
-      tick();
-    })();
-  </script>
+      <div class="how-card">
+        <span class="how-card__number">01</span>
+        <h3 class="how-card__title">Entri nella Sala Morris.</h3>
+      </div>
+
+      <div class="how-card">
+        <span class="how-card__number">02</span>
+        <h3 class="how-card__title">Ricevi ogni giorno le operazioni.</h3>
+      </div>
+
+      <div class="how-card">
+        <span class="how-card__number">03</span>
+        <h3 class="how-card__title">Impari, copi e migliori nel tempo.</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 6 =================== -->
+
+<!-- ===================== BLOCCO 7: RECENSIONI ===================== -->
+<section class="reviews">
+  <div class="reviews__container">
+    <h2 class="reviews__title">Cosa dicono i membri della Sala Morris</h2>
+  </div>
+
+  <div class="reviews__viewport">
+    <div class="reviews__track">
+
+      <div class="review-card"><img src="images/caso1.jpeg" alt="Recensione membro Sala Morris"></div>
+      <div class="review-card"><img src="images/caso2.jpeg" alt="Recensione membro Sala Morris"></div>
+      <div class="review-card"><img src="images/caso3.jpeg" alt="Recensione membro Sala Morris"></div>
+      <div class="review-card"><img src="images/caso4.jpeg" alt="Recensione membro Sala Morris"></div>
+      <div class="review-card"><img src="images/caso5.jpeg" alt="Recensione membro Sala Morris"></div>
+
+      <!-- duplicato per lo scorrimento continuo senza interruzioni -->
+      <div class="review-card" aria-hidden="true"><img src="images/caso1.jpeg" alt=""></div>
+      <div class="review-card" aria-hidden="true"><img src="images/caso2.jpeg" alt=""></div>
+      <div class="review-card" aria-hidden="true"><img src="images/caso3.jpeg" alt=""></div>
+      <div class="review-card" aria-hidden="true"><img src="images/caso4.jpeg" alt=""></div>
+      <div class="review-card" aria-hidden="true"><img src="images/caso5.jpeg" alt=""></div>
+
+    </div>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 7 =================== -->
+
+<!-- ===================== BLOCCO 8: LIVE ANALISI ===================== -->
+<section class="live">
+  <div class="live__container">
+    <p class="live__eyebrow">Live di analisi incluse</p>
+    <p class="live__body live__body--strong">
+      Ogni settimana analizziamo insieme il <span class="hl">mercato</span> e
+      rivediamo le operazioni più importanti, live.
+    </p>
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 8 =================== -->
+
+<!-- ===================== BLOCCO 9: CTA FINALE ===================== -->
+<section class="final-cta" id="accedi">
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__container">
+
+    <p class="final-cta__eyebrow">Accedi alla Sala Morris.</p>
+
+    <h2 class="final-cta__title">
+      Fra sei mesi sarai comunque<br>sei mesi più grande.
+    </h2>
+
+    <p class="final-cta__question">La domanda è una sola.</p>
+
+    <p class="final-cta__body">
+      Continuerai ad aspettare lo stipendio del mese...
+    </p>
+    <p class="final-cta__body final-cta__body--strong">
+      Oppure inizierai finalmente a costruire un'<span class="hl">entrata extra</span>
+      che possa darti maggiore serenità?
+    </p>
+
+    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="final-cta__button">
+      Accedi alla Sala Morris
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
+<!-- =================== FINE BLOCCO 9 =================== -->
+
+<!-- ===================== PULSANTE WHATSAPP FLOTTANTE ===================== -->
+<a href="https://wa.me/message/EFXPEHEVHDDXO1" target="_blank" class="whatsapp-float" aria-label="Contattami su WhatsApp">
+  <img src="images/whatsappicon1.webp" alt="WhatsApp">
+  <span class="whatsapp-badge">1</span>
+</a>
 
 </body>
 </html>
