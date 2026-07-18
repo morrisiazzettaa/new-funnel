@@ -1,368 +1,746 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sala Morris</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+/* ============ RESET & BASE ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<!-- ===================== META PIXEL ===================== -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1682739049480233');
-fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1682739049480233&ev=PageView&noscript=1"/>
-</noscript>
-<!-- =================== FINE META PIXEL =================== -->
-</head>
-<body>
+:root {
+  --bg-black: #05070c;
+  --bg-black-soft: #0a0d15;
+  --bg-black-elevated: #0d111b;
+  --navy: #1e3a8a;
+  --navy-bright: #3355f0;
+  --navy-glow: #5b7bff;
+  --text-white: #f5f6f8;
+  --text-grey: #9aa3b5;
+  --text-grey-dim: #6b7386;
+  --border-soft: rgba(255, 255, 255, 0.07);
+  --border-navy: rgba(91, 123, 255, 0.25);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+}
 
-<!-- ===================== BLOCCO 1: HERO ===================== -->
-<section class="hero">
-  <div class="hero__glow"></div>
+html {
+  scroll-behavior: smooth;
+}
 
-  <div class="hero__container">
+body {
+  background: var(--bg-black);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  line-height: 1.4;
+  overflow-x: hidden;
+}
 
-    <h1 class="hero__title">
-      Non hai bisogno di lavorare più ore.<br>
-      Hai bisogno di un <span class="hl">sistema migliore</span>.
-    </h1>
+.hl {
+  color: var(--navy-glow);
+}
 
-    <p class="hero__body">
-      Una community privata dove ogni giorno condivido le operazioni che eseguo
-      sul mio conto reale, ti insegno il metodo e ti accompagno passo dopo passo.
-    </p>
+section {
+  position: relative;
+}
 
-    <div class="hero__vsl">
-      <div id="vidalytics_embed_xAyGOYFG7h1gPb8x" style="width: 100%; position:relative; padding-top: 177.94%;"></div>
-      <script type="text/javascript">
-      (function (v, i, d, a, l, y, t, c, s) {
-          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-          if (!vsl){vsl=function(u,cb){
-              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-              i.getElementsByTagName("head")[0].appendChild(s);
-          };}
-          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-      })(window, document, 'Vidalytics', 'vidalytics_embed_xAyGOYFG7h1gPb8x', 'https://fast.vidalytics.com/embeds/LbjsXeBc/xAyGOYFG7h1gPb8x/');
-      </script>
-    </div>
+/* ============ HERO (BLOCCO 1) ============ */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12px 24px 8px;
+  overflow: hidden;
+}
 
-    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="hero__cta">
-      Accedi alla Sala Morris
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+.hero__glow {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(51, 85, 240, 0.4) 0%, rgba(51, 85, 240, 0) 65%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-    <div class="hero__badges">
-      <span class="hero__badge">✓ 500+ membri</span>
-      <span class="hero__badge">✓ Operatività quotidiana</span>
-      <span class="hero__badge">✓ Supporto costante</span>
-    </div>
+.hero__container {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 1 =================== -->
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 5.4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-white);
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
 
-<!-- ===================== BLOCCO 2: PAIN ===================== -->
-<section class="pain">
-  <div class="pain__container">
+.hero__body {
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: 400;
+  color: var(--text-grey);
+  max-width: 540px;
+  margin-bottom: 14px;
+}
 
-    <h2 class="pain__title">Ti riconosci in questa situazione?</h2>
+/* ---- VSL box ---- */
+.hero__vsl {
+  width: 100%;
+  max-width: 380px;
+  align-self: center;
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--bg-black-soft), #0d1220);
+  border: 1px solid var(--border-navy);
+  box-shadow: 0 0 60px rgba(30, 58, 138, 0.25), inset 0 0 0 1px rgba(255,255,255,0.02);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
 
-    <div class="pain__cycle">
-      <p class="pain__line">Ogni mese lo stipendio entra.</p>
-      <p class="pain__line pain__line--fade">E quasi subito esce.</p>
-    </div>
+/* ---- Badge premium, sotto la CTA ---- */
+.hero__badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 12px;
+  margin-top: 24px;
+  width: 100%;
+}
 
-    <ul class="pain__list">
-      <li>Bollette.</li>
-      <li>Affitto.</li>
-      <li>Spese impreviste.</li>
-    </ul>
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  background: rgba(91, 123, 255, 0.08);
+  border: 1px solid var(--border-navy);
+  padding: 12px 24px;
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(51, 85, 240, 0.18);
+  white-space: nowrap;
+}
 
-    <p class="pain__body">
-      E alla fine rimane sempre troppo poco per concederti quello che vorresti.
-    </p>
+/* ---- CTA (riutilizzata in più sezioni) ---- */
+.hero__cta,
+.final-cta__button,
+.belief__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--navy-bright);
+  color: var(--text-white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  padding: 16px 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
 
-    <ul class="pain__list pain__list--wants">
-      <li>Una cena fuori.</li>
-      <li>Un weekend.</li>
-      <li>Un po' di tranquillità.</li>
-    </ul>
+.hero__cta svg,
+.final-cta__button svg,
+.belief__cta svg {
+  transition: transform 0.2s ease;
+}
 
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 2 =================== -->
+.hero__cta:hover,
+.final-cta__button:hover,
+.belief__cta:hover {
+  background: #2846d6;
+  border-color: rgba(255, 255, 255, 0.16);
+}
 
-<!-- ===================== BLOCCO 3: BELIEF SHIFT ===================== -->
-<section class="belief">
-  <div class="belief__container">
-    <p class="belief__body">
-      La maggior parte delle persone pensa che per migliorare
-      la propria situazione economica serva lavorare ancora di più.
-    </p>
-    <p class="belief__negation">Ma non è così.</p>
-    <h2 class="belief__title">Serve un <span class="hl">sistema</span>.</h2>
-    <p class="belief__body belief__body--muted">
-      Un sistema semplice da seguire con costanza.
-    </p>
+.hero__cta:hover svg,
+.final-cta__button:hover svg,
+.belief__cta:hover svg {
+  transform: translateX(3px);
+}
 
-    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="belief__cta">
-      Accedi alla Sala Morris
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 3 =================== -->
+.hero__cta:active,
+.final-cta__button:active,
+.belief__cta:active {
+  transform: scale(0.98);
+}
 
-<!-- ===================== BLOCCO 4: STORY ===================== -->
-<section class="story">
-  <div class="story__container">
+/* ============ PAIN (BLOCCO 2) ============ */
+.pain {
+  padding: 8px 24px 4px;
+  border-top: 1px solid var(--border-soft);
+}
 
-    <img class="story__photo" src="images/foto.gif" alt="Morris Iazzetta - Sala Morris">
+.pain__container {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: left;
+}
 
-    <div class="story__content">
-      <p class="story__body story__body--strong">
-        Da 10 ore al giorno per <span class="hl">2.000€ al mese</span>
-        a oltre <span class="hl">50.000€ di capitale reale</span>.
-      </p>
-      <p class="story__body">
-        Ogni giorno condivido le mie operazioni con oltre <strong>500 persone</strong>:
-        non scorciatoie, ma un metodo che puoi seguire da subito.
-      </p>
-    </div>
+.pain__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
 
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 4 =================== -->
+.pain__cycle {
+  margin-bottom: 18px;
+}
 
-<!-- ===================== BLOCCO 5: FEATURES ===================== -->
-<section class="features">
-  <div class="features__container">
+.pain__line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--text-white);
+  margin-bottom: 4px;
+}
 
-    <h2 class="features__title">Cosa ottieni entrando nella Sala Morris</h2>
+.pain__line--fade {
+  color: var(--text-grey-dim);
+}
 
-    <div class="features__grid">
+.pain__list {
+  list-style: none;
+  margin-bottom: 18px;
+}
 
-      <div class="feature">
-        <span class="feature__number">01</span>
-        <h3 class="feature__title">Operi con sicurezza, ogni giorno</h3>
-        <p class="feature__body">
-          Ricevi la notifica, copi l'operazione, segui la gestione in tempo reale.
-          Anche se parti da zero, sai sempre cosa fare.
-        </p>
-      </div>
+.pain__list li {
+  font-size: 17px;
+  color: var(--text-grey);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
 
-      <div class="feature">
-        <span class="feature__number">02</span>
-        <h3 class="feature__title">Impari a muoverti da solo</h3>
-        <p class="feature__body">
-          Con i videocorsi capisci il perché di ogni operazione, così nel tempo
-          diventi autonomo invece di dipendere da qualcuno.
-        </p>
-      </div>
+.pain__list li:last-child {
+  border-bottom: none;
+}
 
-      <div class="feature">
-        <span class="feature__number">03</span>
-        <h3 class="feature__title">Non resti mai bloccato da solo</h3>
-        <p class="feature__body">
-          Hai supporto quotidiano, mio e della community. Ogni dubbio trova
-          una risposta, subito.
-        </p>
-      </div>
+.pain__body {
+  font-size: 18px;
+  color: var(--text-white);
+  font-weight: 500;
+  max-width: 480px;
+  margin: 0 0 16px;
+}
 
-      <div class="feature">
-        <span class="feature__number">04</span>
-        <h3 class="feature__title">Parti senza perdere tempo</h3>
-        <p class="feature__body">
-          Strumenti e piattaforme già selezionati: eviti settimane di ricerche
-          e inizi subito a operare.
-        </p>
-      </div>
+.pain__list--wants li {
+  color: var(--navy-glow);
+  font-weight: 500;
+  border-bottom: none;
+  padding: 4px 0;
+}
 
-    </div>
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 5 =================== -->
+/* ============ BELIEF (BLOCCO 3) ============ */
+.belief {
+  padding: 4px 24px 45px;
+  background: var(--bg-black-soft);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
 
-<!-- ===================== BLOCCO 6: COME FUNZIONA ===================== -->
-<section class="howitworks">
-  <div class="howitworks__container">
+.belief__container {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: left;
+}
 
-    <h2 class="howitworks__title">Come funziona</h2>
+.belief__body {
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: var(--text-grey);
+  margin-bottom: 12px;
+}
 
-    <div class="howitworks__grid">
+.belief__negation {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 24px);
+  line-height: 1.2;
+  color: var(--text-white);
+  margin-bottom: 12px;
+}
 
-      <div class="how-card">
-        <span class="how-card__number">01</span>
-        <h3 class="how-card__title">Entri nella Sala Morris.</h3>
-      </div>
+.belief__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
 
-      <div class="how-card">
-        <span class="how-card__number">02</span>
-        <h3 class="how-card__title">Ricevi ogni giorno le operazioni.</h3>
-      </div>
+.belief__body--muted {
+  color: var(--text-grey-dim);
+  margin-bottom: 24px;
+}
 
-      <div class="how-card">
-        <span class="how-card__number">03</span>
-        <h3 class="how-card__title">Impari, copi e migliori nel tempo.</h3>
-      </div>
+/* ============ STORY (BLOCCO 4) ============ */
+.story {
+  padding: 70px 24px;
+}
 
-    </div>
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 6 =================== -->
+.story__container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
 
-<!-- ===================== BLOCCO 7: RECENSIONI ===================== -->
-<section class="reviews">
-  <div class="reviews__container">
-    <h2 class="reviews__title">Cosa dicono i membri della Sala Morris</h2>
-  </div>
+/* ---- Card protagonista per la GIF/foto reale ---- */
+.story__photo {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+  border: 1px solid var(--border-navy);
+  box-shadow: 0 0 80px rgba(51, 85, 240, 0.3), inset 0 0 0 1px rgba(255,255,255,0.03);
+  flex-shrink: 0;
+}
 
-  <div class="reviews__viewport">
-    <div class="reviews__track">
+.story__content {
+  max-width: 560px;
+  width: 100%;
+  text-align: left;
+}
 
-      <div class="review-card"><img src="images/caso1.jpeg" alt="Recensione membro Sala Morris"></div>
-      <div class="review-card"><img src="images/caso2.jpeg" alt="Recensione membro Sala Morris"></div>
-      <div class="review-card"><img src="images/caso3.jpeg" alt="Recensione membro Sala Morris"></div>
-      <div class="review-card"><img src="images/caso4.jpeg" alt="Recensione membro Sala Morris"></div>
-      <div class="review-card"><img src="images/caso5.jpeg" alt="Recensione membro Sala Morris"></div>
+.story__body {
+  font-size: 17px;
+  color: var(--text-grey);
+  margin-bottom: 10px;
+}
 
-      <!-- duplicato per lo scorrimento continuo senza interruzioni -->
-      <div class="review-card" aria-hidden="true"><img src="images/caso1.jpeg" alt=""></div>
-      <div class="review-card" aria-hidden="true"><img src="images/caso2.jpeg" alt=""></div>
-      <div class="review-card" aria-hidden="true"><img src="images/caso3.jpeg" alt=""></div>
-      <div class="review-card" aria-hidden="true"><img src="images/caso4.jpeg" alt=""></div>
-      <div class="review-card" aria-hidden="true"><img src="images/caso5.jpeg" alt=""></div>
+.story__body--strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-white);
+}
 
-    </div>
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 7 =================== -->
+/* ============ FEATURES (BLOCCO 5) ============ */
+.features {
+  padding: 70px 24px;
+  background: var(--bg-black-soft);
+  border-top: 1px solid var(--border-soft);
+}
 
-<!-- ===================== BLOCCO 8: LIVE ANALISI ===================== -->
-<section class="live">
-  <div class="live__container">
-    <p class="live__eyebrow">Live di analisi incluse</p>
-    <p class="live__body live__body--strong">
-      Ogni settimana analizziamo insieme il <span class="hl">mercato</span> e
-      rivediamo le operazioni più importanti, live.
-    </p>
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 8 =================== -->
+.features__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-<!-- ===================== BLOCCO 9: CTA FINALE ===================== -->
-<section class="final-cta" id="accedi">
-  <div class="final-cta__glow"></div>
-  <div class="final-cta__container">
+.features__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4.4vw, 40px);
+  line-height: 1.15;
+  text-align: left;
+  max-width: 640px;
+  margin: 0 0 36px;
+}
 
-    <p class="final-cta__eyebrow">Accedi alla Sala Morris.</p>
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
 
-    <h2 class="final-cta__title">
-      Fra sei mesi sarai comunque<br>sei mesi più grande.
-    </h2>
+.feature {
+  background: var(--bg-black-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 36px 32px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
 
-    <p class="final-cta__question">La domanda è una sola.</p>
+.feature:hover {
+  border-color: var(--border-navy);
+  transform: translateY(-3px);
+}
 
-    <p class="final-cta__body">
-      Continuerai ad aspettare lo stipendio del mese...
-    </p>
-    <p class="final-cta__body final-cta__body--strong">
-      Oppure inizierai finalmente a costruire un'<span class="hl">entrata extra</span>
-      che possa darti maggiore serenità?
-    </p>
+.feature__number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy-glow);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
 
-    <a href="https://whatsapp.com/channel/0029Vb7JeIU4o7qK7h1UrC1f" target="_blank" class="final-cta__button">
-      Accedi alla Sala Morris
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+.feature__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-white);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
 
-  </div>
-</section>
-<!-- =================== FINE BLOCCO 9 =================== -->
+.feature__body {
+  font-size: 15px;
+  color: var(--text-grey);
+  line-height: 1.6;
+}
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <div class="footer__container">
+/* ============ COME FUNZIONA (BLOCCO 6) ============ */
+.howitworks {
+  padding: 70px 24px;
+  border-top: 1px solid var(--border-soft);
+}
 
-    <h4 class="footer__heading">Disclaimer</h4>
-    <p class="footer__text">
-      Le informazioni contenute in questo sito, nei video, nei contenuti della community
-      e nelle comunicazioni di Sala Morris hanno esclusivamente finalità formative e informative.
-      Non vengono fornite raccomandazioni finanziarie personalizzate né consulenza in materia
-      di investimenti. Ogni decisione operativa rimane esclusivamente a carico dell'utente.
-      Il trading e gli investimenti comportano rischi significativi, inclusa la possibile perdita
-      totale o parziale del capitale investito. Le performance passate non costituiscono garanzia
-      di risultati futuri.
-    </p>
-    <p class="footer__text">
-      Sala Morris non promette né garantisce risultati economici, guadagni o performance specifiche.
-      Eventuali esempi, risultati, testimonianze o casi studio riportati sul sito, nella community
-      o nei contenuti pubblicati hanno esclusivamente scopo illustrativo e non devono essere
-      interpretati come una promessa di risultati futuri. Ogni risultato dipende da numerosi fattori,
-      tra cui esperienza, preparazione, disciplina, gestione del rischio, capitale disponibile
-      e condizioni di mercato, elementi che non possono essere controllati né garantiti.
-      L'utilizzo dei contenuti di Sala Morris implica l'accettazione della piena responsabilità
-      delle proprie decisioni finanziarie e operative.
-    </p>
+.howitworks__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    <h4 class="footer__heading">Meta e Google</h4>
-    <p class="footer__text">
-      Questo sito non è affiliato, approvato, sponsorizzato o associato in alcun modo a Meta
-      Platforms, Inc., Google LLC o alle rispettive società controllate o affiliate.
-      Meta®, Facebook®, Instagram® e tutti i marchi correlati sono di proprietà di Meta Platforms, Inc.
-      Google® e i relativi marchi sono di proprietà di Google LLC.
-    </p>
+.howitworks__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4.4vw, 40px);
+  line-height: 1.15;
+  text-align: left;
+  margin: 0 0 36px;
+}
 
-  </div>
-</footer>
-<!-- =================== FINE FOOTER =================== -->
+.howitworks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
-<!-- ===================== PULSANTE WHATSAPP FLOTTANTE ===================== -->
-<a href="https://wa.me/message/EFXPEHEVHDDXO1" target="_blank" class="whatsapp-float" aria-label="Contattami su WhatsApp">
-  <img src="images/whatsappicon1.webp" alt="WhatsApp">
-  <span class="whatsapp-badge">1</span>
-</a>
+.how-card {
+  background: var(--bg-black-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 30px 26px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
 
-<!-- ===================== TRACCIAMENTO CLICK (Lead / Contact) ===================== -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var ctaButtons = document.querySelectorAll('.hero__cta, .belief__cta, .final-cta__button');
-  ctaButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-    });
-  });
+.how-card:hover {
+  border-color: var(--border-navy);
+  transform: translateY(-3px);
+}
 
-  var whatsappBtn = document.querySelector('.whatsapp-float');
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', function () {
-      if (typeof fbq === 'function') { fbq('track', 'Contact'); }
-    });
+.how-card__number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy-glow);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.how-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-white);
+  line-height: 1.3;
+}
+
+/* ============ RECENSIONI (BLOCCO 7) ============ */
+.reviews {
+  padding: 70px 0;
+  background: var(--bg-black-soft);
+  border-top: 1px solid var(--border-soft);
+}
+
+.reviews__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.reviews__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.15;
+  text-align: left;
+  margin: 0 0 32px;
+}
+
+.reviews__viewport {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.reviews__track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: reviews-scroll 30s linear infinite;
+}
+
+.reviews__viewport:hover .reviews__track {
+  animation-play-state: paused;
+}
+
+.review-card {
+  flex-shrink: 0;
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-navy);
+  box-shadow: 0 0 40px rgba(51, 85, 240, 0.15), inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.review-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============ LIVE (BLOCCO 8) ============ */
+.live {
+  padding: 70px 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.live__container {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.live__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy-glow);
+  margin-bottom: 16px;
+}
+
+.live__body {
+  font-size: 17px;
+  color: var(--text-grey);
+  margin-bottom: 10px;
+}
+
+.live__body--strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--text-white);
+  margin-bottom: 0;
+}
+
+/* ============ CTA FINALE (BLOCCO 9) ============ */
+.final-cta {
+  position: relative;
+  padding: 84px 24px;
+  background: var(--bg-black-soft);
+  border-top: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+
+.final-cta__glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(51, 85, 240, 0.35) 0%, rgba(51, 85, 240, 0) 65%);
+  pointer-events: none;
+}
+
+.final-cta__container {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.final-cta__eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-grey);
+  margin-bottom: 24px;
+}
+
+.final-cta__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4.8vw, 44px);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.final-cta__question {
+  font-size: 18px;
+  color: var(--text-grey-dim);
+  margin-bottom: 12px;
+}
+
+.final-cta__body {
+  font-size: 18px;
+  color: var(--text-grey);
+  margin-bottom: 6px;
+}
+
+.final-cta__body--strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--text-white);
+  margin-bottom: 24px;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  padding: 32px 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.footer__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.footer__heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.footer__heading:first-child {
+  margin-top: 0;
+}
+
+.footer__text {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-grey-dim);
+  margin-bottom: 6px;
+}
+
+/* ---- Pulsante WhatsApp flottante ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: -10px;
+  right: 2px;
+  height: 118px;
+  aspect-ratio: 860 / 717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 7px rgba(37, 211, 102, 0.225));
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.06);
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.whatsapp-badge {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ff3b30;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-black);
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    height: 100px;
+    bottom: -8px;
+    right: 2px;
   }
-});
-</script>
-<!-- =================== FINE TRACCIAMENTO CLICK =================== -->
+}
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+  .howitworks__grid {
+    grid-template-columns: 1fr;
+  }
+  .story__container {
+    flex-direction: column;
+  }
+}
 
-</body>
-</html>
+@media (max-width: 480px) {
+  .hero {
+    padding: 12px 20px 12px;
+  }
+  .hero__cta,
+  .final-cta__button {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero__badges {
+    align-items: center;
+  }
+  .hero__badge {
+    width: 100%;
+    max-width: 320px;
+  }
+  .pain, .belief, .story, .features, .howitworks, .live, .final-cta {
+    padding: 48px 20px;
+  }
+  .reviews {
+    padding: 48px 0;
+  }
+  .review-card {
+    width: 240px;
+  }
+}
