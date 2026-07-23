@@ -24,19 +24,6 @@ body {
   letter-spacing: normal;
 }
 
-.top-banner-alert {
-  background: #c62828;
-  padding: 20px 20px;
-}
-
-.top-banner-alert .banner-text {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  font-size: 28px;
-  line-height: 1.15;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 .banner-text {
   text-align: center;
 }
@@ -108,7 +95,7 @@ body {
 
 .photo {
   width: 100%;
-  max-width: 216px;
+  max-width: 232px;
   height: auto;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
@@ -127,8 +114,8 @@ body {
   gap: 10px;
   margin-bottom: 8px;
   font-family: 'Outfit', sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.45;
   color: #dce4f2;
 }
 
@@ -268,7 +255,7 @@ body {
 .hero__vsl {
   width: 100%;
   max-width: 380px;
-  margin: 0 auto 12px;
+  margin: 0 auto 20px;
   border-radius: 16px;
   background: linear-gradient(145deg, #0a0e1a, #0d1220);
   border: 1px solid #1e3a6e;
@@ -328,8 +315,8 @@ body {
 
 .letter-body p {
   font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: #dce4f2;
   margin-bottom: 14px;
 }
@@ -376,6 +363,51 @@ body {
 .access-form input:focus {
   outline: none;
   border-color: #0a84ff;
+}
+
+.phone-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.phone-prefix {
+  flex: 0 0 92px;
+  width: 92px;
+  padding: 12px 8px;
+  border-radius: 10px;
+  border: 1px solid #1e3a6e;
+  background: #10203f;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+}
+
+.phone-prefix:focus {
+  outline: none;
+  border-color: #0a84ff;
+}
+
+.phone-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.input-error {
+  border-color: #ff5252 !important;
+}
+
+.phone-error {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: #ff5252;
+  text-align: left;
+  margin-top: -4px;
+  display: none;
+}
+
+.phone-error-visible {
+  display: block;
 }
 
 .form-submit {
@@ -430,8 +462,44 @@ body {
   margin-bottom: 16px;
 }
 
-.thankyou-badge {
+.success-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid #25d366;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
   margin-bottom: 16px;
+}
+
+.success-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: #25d366;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.success-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #25d366;
+  margin-bottom: 2px;
+}
+
+.success-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: #b8c4d9;
+  line-height: 1.4;
+}
+
+.thankyou-badge {
+  margin-bottom: 12px;
 }
 
 .thankyou-text {
