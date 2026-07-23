@@ -42,14 +42,18 @@ src="https://www.facebook.com/tr?id=1517405446360980&ev=PageView&noscript=1"
     ASPETTA<span class="accent">.</span><br><span class="line2">NON È FINITA</span>
   </h1>
 
+  <div class="success-badge">
+    <svg class="success-icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <p class="success-title">Candidatura andata a buon fine!</p>
+      <p class="success-subtitle">Ti contatteremo a breve. Guarda il video qui sotto per l'ultimo passaggio.</p>
+    </div>
+  </div>
+
   <div class="live-badge thankyou-badge">
     <span class="dot"></span>
     Ultimo passaggio · Manca 1 minuto
   </div>
-
-  <p class="subtext thankyou-text">
-    Abbiamo ricevuto i tuoi dati, ma la candidatura non è ancora completa. Guarda questo breve video adesso per scoprire l'ultimo passaggio e sbloccare l'accesso alla Sala Morris.
-  </p>
 
   <div class="countdown-box">
     <p class="countdown-label">Accesso disponibile ancora per:</p>
@@ -125,7 +129,7 @@ const vslObserverThankyou = new IntersectionObserver((entries) => {
       vslObserverThankyou.disconnect();
     }
   });
-}, { rootMargin: '400px 0px' });
+}, { rootMargin: '50px 0px' });
 
 vslObserverThankyou.observe(document.getElementById('vsl-container-thankyou'));
 
