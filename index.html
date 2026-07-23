@@ -183,7 +183,7 @@ src="https://www.facebook.com/tr?id=1517405446360980&ev=PageView&noscript=1"
 
 <section class="section-form">
 
-  <p class="eyebrow">Posti limitati per sessione · Iscrizione gratis</p>
+  <p class="eyebrow">Posti limitati · Iscrizione gratis</p>
 
   <h2 class="headline2">
     RICHIEDI<br><span class="accent">L'ACCESSO</span>
@@ -193,14 +193,33 @@ src="https://www.facebook.com/tr?id=1517405446360980&ev=PageView&noscript=1"
     Lascia i tuoi dati per entrare nella Sala Morris. Niente promessa magica, niente hype. Solo il sistema operativo che chi guadagna davvero con il trading usa — in italiano, gratis.
   </p>
 
-  <form class="access-form" action="https://api.web3forms.com/submit" method="POST">
+  <form class="access-form" action="https://api.web3forms.com/submit" method="POST" id="accessForm">
     <input type="hidden" name="access_key" value="90f9d6d6-6de9-42c9-b583-ae2f84923e57">
     <input type="hidden" name="subject" value="Nuova richiesta di accesso - Sala Morris">
     <input type="hidden" name="from_name" value="Sala Morris - Form Sito">
     <input type="hidden" name="redirect" value="https://morrisiazzettaa.github.io/new-funnel/grazie.html">
     <input type="text" name="name" placeholder="Nome" autocomplete="given-name" required>
     <input type="text" name="cognome" placeholder="Cognome" autocomplete="family-name" required>
-    <input type="tel" name="telefono" placeholder="Telefono" autocomplete="tel" required>
+
+    <div class="phone-row">
+      <select name="prefisso" class="phone-prefix" id="phonePrefix">
+        <option value="+39" selected>🇮🇹 +39</option>
+        <option value="+33">🇫🇷 +33</option>
+        <option value="+49">🇩🇪 +49</option>
+        <option value="+34">🇪🇸 +34</option>
+        <option value="+351">🇵🇹 +351</option>
+        <option value="+44">🇬🇧 +44</option>
+        <option value="+41">🇨🇭 +41</option>
+        <option value="+43">🇦🇹 +43</option>
+        <option value="+32">🇧🇪 +32</option>
+        <option value="+31">🇳🇱 +31</option>
+        <option value="+30">🇬🇷 +30</option>
+        <option value="+48">🇵🇱 +48</option>
+      </select>
+      <input type="tel" name="telefono" placeholder="Numero di telefono" autocomplete="tel" id="phoneInput" required>
+    </div>
+    <p class="phone-error" id="phoneError">Inserisci un numero valido (solo cifre, 6-12 numeri)</p>
+
     <button type="submit" class="cta-button form-submit">
       <span class="cta-text">RICHIEDI L'ACCESSO</span>
       <svg class="cta-arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -279,6 +298,34 @@ const vslObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '400px 0px' });
 
 vslObserver.observe(document.getElementById('vsl-container'));
+
+// Micro-validazione numero di telefono
+(function () {
+  const form = document.getElementById('accessForm');
+  const phoneInput = document.getElementById('phoneInput');
+  const phoneError = document.getElementById('phoneError');
+
+  function isValidPhone(value) {
+    const digitsOnly = value.replace(/\D/g, '');
+    return digitsOnly.length >= 6 && digitsOnly.length <= 12;
+  }
+
+  phoneInput.addEventListener('input', () => {
+    if (isValidPhone(phoneInput.value) || phoneInput.value === '') {
+      phoneInput.classList.remove('input-error');
+      phoneError.classList.remove('phone-error-visible');
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    if (!isValidPhone(phoneInput.value)) {
+      e.preventDefault();
+      phoneInput.classList.add('input-error');
+      phoneError.classList.add('phone-error-visible');
+      phoneInput.focus();
+    }
+  });
+})();
 </script>
 
 </body>
